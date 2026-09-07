@@ -1,0 +1,22 @@
+apply plugin: 'com.android.application'
+
+android {
+    defaultConfig {
+        applicationId "org.jpi59.teclado"
+        compileSdk 36
+        minSdkVersion 24
+        targetSdkVersion 36
+        versionCode 148
+        versionName "6.6"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    namespace 'org.jpi59.teclado'
+}
+
+dependencies {
+}

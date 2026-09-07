@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (C) 2026 jpi59
+
+name: Build and privacy checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Build debug APK
+        run: ./gradlew :app:assembleDebug --no-daemon
+      - name: Check privacy policy
+        run: |
+          AAPT="${ANDROID_HOME}/build-tools/$(ls -1 "${ANDROID_HOME}/build-tools" | sort -V | tail -1)/aapt"
+          AAPT="$AAPT" ./scripts/verificar-privacidad.sh app/build/outputs/apk/debug/app-debug.apk
+      - name: Check licenses and provenance
+        run: ./scripts/verificar-licencias.sh

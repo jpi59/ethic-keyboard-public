@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2026 jpi59
+     Licensed under the GNU GPLv3 or later. See ../LICENSE. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Ethic Keyboard</title>
+  <desc id="desc">Minimal keyboard mark without text or tracking symbols.</desc>
+  <rect width="512" height="512" rx="112" fill="#102A43"/>
+  <rect x="96" y="104" width="320" height="304" rx="34" fill="#F4F7F9"/>
+  <rect x="128" y="136" width="256" height="28" rx="14" fill="#2BAE9F"/>
+  <g fill="#9FB3C8">
+    <rect x="128" y="196" width="44" height="44" rx="10"/>
+    <rect x="184" y="196" width="44" height="44" rx="10"/>
+    <rect x="240" y="196" width="44" height="44" rx="10"/>
+    <rect x="296" y="196" width="44" height="44" rx="10"/>
+    <rect x="352" y="196" width="32" height="44" rx="10"/>
+    <rect x="128" y="252" width="44" height="44" rx="10"/>
+    <rect x="184" y="252" width="44" height="44" rx="10"/>
+    <rect x="240" y="252" width="44" height="44" rx="10"/>
+    <rect x="296" y="252" width="44" height="44" rx="10"/>
+    <rect x="352" y="252" width="32" height="44" rx="10"/>
+    <rect x="176" y="316" width="160" height="44" rx="10"/>
+  </g>
+</svg>
