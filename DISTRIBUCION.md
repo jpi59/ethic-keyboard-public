@@ -6,7 +6,7 @@ Estado: **preparación de tiendas; no publicada**.
 
 - Nombre: Ethic Keyboard
 - Paquete Android: `org.jpi59.teclado`
-- Versión preparada: `6.6.1` (`versionCode 149`)
+- Versión preparada: `6.6.2` (`versionCode 150`)
 - Licencia del conjunto: GNU GPLv3 o posterior; se conservan los avisos Apache 2.0 heredados.
 - Política de privacidad integrada: `PRIVACY_JPI59.md`, accesible desde los ajustes de la aplicación.
 

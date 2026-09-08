@@ -1,0 +1,2 @@
+Removed the unnecessary Foojay toolchain resolver from the build.
+Added SHA-256 verification for the Gradle distribution used by the wrapper.
