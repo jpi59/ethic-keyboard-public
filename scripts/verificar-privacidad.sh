@@ -15,8 +15,18 @@ fi
 
 manifest="$repo_root/app/src/main/AndroidManifest.xml"
 app_strings="$repo_root/app/src/main/res/values/strings-appname.xml"
+privacy_policy="$repo_root/PRIVACY_JPI59.md"
 if grep -Eq 'android\.permission\.(INTERNET|ACCESS_NETWORK_STATE|ACCESS_WIFI_STATE)' "$manifest"; then
   printf 'ERROR: el manifiesto declara red; requiere revisión ética explícita.\n' >&2
+  exit 1
+fi
+
+grep -Fq 'android:allowBackup="false"' "$manifest" || {
+  printf 'ERROR: la aplicación permite respaldo automático; revisa la política de privacidad.\n' >&2
+  exit 1
+}
+if grep -R -n -E 'android\.app\.backup\.BackupManager|new BackupManager' "$repo_root/app/src" >/dev/null 2>&1; then
+  printf 'ERROR: el código solicita copias de seguridad del sistema.\n' >&2
   exit 1
 fi
 
@@ -32,6 +42,15 @@ if grep -Fq 'https://github.com/jpi59/ethic-keyboard/blob/master/' "$app_strings
   printf 'ERROR: quedan enlaces al repositorio no público en la aplicación.\n' >&2
   exit 1
 fi
+
+grep -Fq 'gestor público de incidencias' "$privacy_policy" || {
+  printf 'ERROR: falta el mecanismo de contacto de privacidad.\n' >&2
+  exit 1
+}
+grep -Fq 'hasta que el usuario las cambia, borra los datos de la' "$privacy_policy" || {
+  printf 'ERROR: falta describir la retención de preferencias locales.\n' >&2
+  exit 1
+}
 
 if git -C "$repo_root" grep -n -E 'firebase|admob|analytics|telemetry|crashlytics' -- app/src app/build.gradle >/dev/null 2>&1; then
   printf 'ERROR: se detectó una referencia de telemetría/publicidad en código o build.\n' >&2

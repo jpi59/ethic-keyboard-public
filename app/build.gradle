@@ -1,18 +1,38 @@
 apply plugin: 'com.android.application'
 
+def releaseKeystorePath = System.getenv('KEYSTORE_PATH')
+def releaseKeyAlias = System.getenv('KEY_ALIAS')
+def releaseStorePassword = System.getenv('STORE_PASSWORD')
+def releaseKeyPassword = System.getenv('KEY_PASSWORD')
+def hasReleaseSigning = [releaseKeystorePath, releaseKeyAlias, releaseStorePassword, releaseKeyPassword]
+        .every { it != null && !it.isEmpty() }
+
 android {
     defaultConfig {
         applicationId "org.jpi59.teclado"
         compileSdk 36
         minSdkVersion 24
         targetSdkVersion 36
-        versionCode 148
-        versionName "6.6"
+        versionCode 149
+        versionName "6.6.1"
+    }
+    if (hasReleaseSigning) {
+        signingConfigs {
+            release {
+                storeFile file(releaseKeystorePath)
+                storePassword releaseStorePassword
+                keyAlias releaseKeyAlias
+                keyPassword releaseKeyPassword
+            }
+        }
     }
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            if (hasReleaseSigning) {
+                signingConfig signingConfigs.release
+            }
         }
     }
     namespace 'org.jpi59.teclado'

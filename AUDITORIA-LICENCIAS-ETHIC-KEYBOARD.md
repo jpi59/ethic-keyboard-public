@@ -7,7 +7,7 @@ Alcance: árbol Git local en `master`, commit vigente y configuración de compil
 
 **Resultado: GPLv3 técnicamente adoptada para la obra combinada, condicionada para publicación pública.** La base de código permite una distribución GPLv3 porque el material Apache 2.0 es compatible con GPLv3, siempre que se conserven los avisos y se completen las verificaciones de los recursos binarios.
 
-La aplicación no está lista para afirmar que todos sus recursos audiovisuales y gráficos tienen derechos documentados: las imágenes de distribución y algunos iconos vectoriales no tienen una ficha de procedencia/licencia individual en el repositorio.
+La procedencia técnica de los recursos actuales fue comparada con el commit upstream declarado y se registró en `PROCEDENCIA-RECURSOS.md`. Las aportaciones visuales atribuidas a jpi59 siguen siendo una declaración del mantenedor; esta auditoría no aporta una prueba externa de autoría ni sustituye una revisión jurídica.
 
 ## Hechos comprobados
 
@@ -39,7 +39,7 @@ Las modificaciones originales de jpi59 pueden publicarse bajo Apache 2.0. Esto n
 
 `icons/icon.svg`, `icons/ic_launcher-playstore.png` y la adaptación de los vectores Android son contribuciones visuales de jpi59, documentadas en `NOTICE.md`. Las capturas y el recurso promocional heredados sin licencia individual cerrada fueron retirados del árbol actual. Sus objetos permanecen en la historia Git privada; el repositorio público debe usar el historial limpio de distribución.
 
-Algunos vectores XML no tienen encabezado de licencia visible. Su presencia en el historial upstream sugiere procedencia heredada, pero debe confirmarse contra el archivo upstream correspondiente y documentarse en `NOTICE.md` antes de declarar una auditoría completa.
+Algunos vectores XML no tienen encabezado de licencia visible. La comparación byte a byte contra el commit upstream documentada en `PROCEDENCIA-RECURSOS.md` confirma su procedencia técnica cuando no difieren; los que difieren están inventariados como derivados o aportaciones declaradas. Debe repetirse esa comparación al incorporar recursos nuevos.
 
 ## Compatibilidad de relicenciamiento
 
@@ -58,8 +58,8 @@ Referencias:
 ## Acciones necesarias antes de hacer público el repositorio
 
 1. Mantener fuera del historial público los recursos binarios de licencia incierta; el árbol de distribución actual ya los retiró.
-2. Comparar los vectores sin encabezado con sus versiones upstream y registrar su procedencia.
-3. Ampliar `NOTICE.md` con una tabla de archivo/recurso, autor, URL, licencia, fecha de consulta y cambios.
+2. Repetir la comparación de recursos contra upstream y actualizar `PROCEDENCIA-RECURSOS.md` con cada cambio.
+3. Documentar o retirar cualquier recurso futuro cuya licencia, fuente o contribución no pueda verificarse.
 4. Mantener Apache 2.0 para esta adaptación mientras no exista una razón técnica y jurídica documentada para relicenciar.
 5. Revisar el contenido final del repositorio público para asegurar que no contiene datos personales, tokens, claves o rutas privadas.
 6. Publicar la política de privacidad en una URL accesible sin autenticación; `docs/privacy.html` queda preparada para GitHub Pages.

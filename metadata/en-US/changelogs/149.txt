@@ -1,0 +1,3 @@
+Disabled automatic backup of keyboard preferences.
+Expanded the in-app privacy policy with data handling, retention, controls, and contact information.
+Corrected privacy and license links to the public source repository.

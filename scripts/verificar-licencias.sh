@@ -12,6 +12,7 @@ required_files=(
   NOTICE.md
   CONTRIBUCIONES-JPI59.md
   AUDITORIA-LICENCIAS-ETHIC-KEYBOARD.md
+  PROCEDENCIA-RECURSOS.md
 )
 
 for file in "${required_files[@]}"; do
@@ -31,6 +32,10 @@ grep -Fq 'Apache License' "$repo_root/LICENSE-APACHE-2.0" || {
 }
 grep -Fq 'CONTRIBUCIONES-JPI59.md' "$repo_root/NOTICE.md" || {
   printf 'ERROR: NOTICE.md no enlaza el inventario de contribuciones.\n' >&2
+  exit 1
+}
+grep -Fq 'PROCEDENCIA-RECURSOS.md' "$repo_root/NOTICE.md" || {
+  printf 'ERROR: NOTICE.md no enlaza el inventario de recursos.\n' >&2
   exit 1
 }
 

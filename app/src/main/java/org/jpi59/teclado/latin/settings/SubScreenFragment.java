@@ -17,7 +17,6 @@
 
 package org.jpi59.teclado.latin.settings;
 
-import android.app.backup.BackupManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
@@ -101,7 +100,6 @@ public abstract class SubScreenFragment extends PreferenceFragment
                     Log.w(tag, "onSharedPreferenceChanged called before activity starts.");
                     return;
                 }
-                new BackupManager(context).dataChanged();
                 fragment.onSharedPreferenceChanged(prefs, key);
             }
         };
