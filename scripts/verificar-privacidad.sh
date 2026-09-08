@@ -14,8 +14,22 @@ if ! command -v "$aapt_path" >/dev/null 2>&1; then
 fi
 
 manifest="$repo_root/app/src/main/AndroidManifest.xml"
+app_strings="$repo_root/app/src/main/res/values/strings-appname.xml"
 if grep -Eq 'android\.permission\.(INTERNET|ACCESS_NETWORK_STATE|ACCESS_WIFI_STATE)' "$manifest"; then
   printf 'ERROR: el manifiesto declara red; requiere revisión ética explícita.\n' >&2
+  exit 1
+fi
+
+grep -Fq 'https://github.com/jpi59/ethic-keyboard-public/blob/master/PRIVACY_JPI59.md' "$app_strings" || {
+  printf 'ERROR: la política de privacidad no apunta al repositorio público.\n' >&2
+  exit 1
+}
+grep -Fq 'https://github.com/jpi59/ethic-keyboard-public/blob/master/LICENSE' "$app_strings" || {
+  printf 'ERROR: la licencia no apunta al repositorio público.\n' >&2
+  exit 1
+}
+if grep -Fq 'https://github.com/jpi59/ethic-keyboard/blob/master/' "$app_strings"; then
+  printf 'ERROR: quedan enlaces al repositorio no público en la aplicación.\n' >&2
   exit 1
 fi
 
