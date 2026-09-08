@@ -27,6 +27,16 @@ Estado: **preparación de tiendas; no publicada**.
 4. Preparar y validar la receta de compilación de F-Droid contra el commit etiquetado; no afirmar disponibilidad hasta la aceptación de F-Droid.
 5. Para Google Play, generar un Android App Bundle (`.aab`), inscribir la clave de firma existente en Play App Signing y completar la ficha, clasificación de contenido y Data safety con declaraciones verificadas.
 
+## Compatibilidad entre canales
+
+La APK directa de Ethic Keyboard se firma con la clave del titular. F-Droid firma
+por defecto sus APK compiladas desde fuente con su propia clave. Por ello, una
+instalación directa no se puede actualizar sobre una versión firmada por F-Droid
+sin desinstalar primero la aplicación, lo que borra sus preferencias locales.
+La ficha de F-Droid debe explicar esta migración antes de ser aceptada. Google
+Play debe usar la clave de firma existente mediante Play App Signing para evitar
+ese problema con instalaciones directas.
+
 ## Comandos de verificación
 
 ```bash

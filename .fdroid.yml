@@ -1,0 +1,16 @@
+Categories:
+  - Writing
+License: GPL-3.0-or-later
+SourceCode: https://github.com/jpi59/ethic-keyboard-public
+IssueTracker: https://github.com/jpi59/ethic-keyboard-public/issues
+
+Builds:
+  - versionName: 6.6.1
+    versionCode: 149
+    commit: 5b02c62182c9170122294e34241df817f0774ffb
+    gradle:
+      - yes
+    output: app/build/outputs/apk/release/app-release-unsigned.apk
+
+CurrentVersion: 6.6.1
+CurrentVersionCode: 149
