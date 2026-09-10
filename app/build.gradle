@@ -13,8 +13,12 @@ android {
         compileSdk 36
         minSdkVersion 24
         targetSdkVersion 36
-        versionCode 150
-        versionName "6.6.2"
+        versionCode 151
+        versionName "6.6.3"
+    }
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
     }
     if (hasReleaseSigning) {
         signingConfigs {
@@ -30,12 +34,15 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            vcsInfo {
+                include = false
+            }
             if (hasReleaseSigning) {
                 signingConfig signingConfigs.release
             }
         }
     }
-    namespace 'org.jpi59.teclado'
+    namespace = 'org.jpi59.teclado'
 }
 
 dependencies {

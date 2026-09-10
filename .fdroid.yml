@@ -5,12 +5,12 @@ SourceCode: https://github.com/jpi59/ethic-keyboard-public
 IssueTracker: https://github.com/jpi59/ethic-keyboard-public/issues
 
 Builds:
-  - versionName: 6.6.2
-    versionCode: 150
-    commit: v6.6.2
+  - versionName: 6.6.3
+    versionCode: 151
+    commit: v6.6.3
     gradle:
       - yes
     output: app/build/outputs/apk/release/app-release-unsigned.apk
 
-CurrentVersion: 6.6.2
-CurrentVersionCode: 150
+CurrentVersion: 6.6.3
+CurrentVersionCode: 151

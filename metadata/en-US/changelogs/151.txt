@@ -1,0 +1,2 @@
+Hardened release metadata for reproducible F-Droid builds.
+Disabled embedded version-control and dependency metadata in release artifacts.
