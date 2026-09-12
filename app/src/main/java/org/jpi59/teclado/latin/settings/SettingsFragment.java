@@ -29,6 +29,7 @@ import android.util.Log;
 
 import org.jpi59.teclado.R;
 import org.jpi59.teclado.latin.utils.ApplicationUtils;
+import org.jpi59.teclado.latin.utils.AppLocale;
 
 public final class SettingsFragment extends InputMethodSettingsFragment {
     private static final String TAG = "SettingsFragment";
@@ -42,6 +43,17 @@ public final class SettingsFragment extends InputMethodSettingsFragment {
         preferenceScreen.setTitle(
                 ApplicationUtils.getActivityTitleResId(getActivity(), SettingsActivity.class));
         final Resources res = getResources();
+
+        findPreference(AppLocale.UI_LANGUAGE_KEY).setOnPreferenceChangeListener(
+                new Preference.OnPreferenceChangeListener() {
+                    @Override
+                    public boolean onPreferenceChange(Preference preference, Object newValue) {
+                        AppLocale.setLanguage(getActivity(), (String) newValue);
+                        getActivity().recreate();
+                        // The value was stored above so the recreated screen reads the new locale.
+                        return false;
+                    }
+                });
 
         findPreference("privacy_policy").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override

@@ -36,6 +36,18 @@
     <!-- Settings screen title for keyboard theme settings [CHAR LIMIT=33] -->
     <string name="settings_screen_theme">Theme</string>
     <string name="settings_category_transparency">Transparency</string>
+    <string name="ui_language">Display language</string>
+    <string name="ui_language_summary">Choose Spanish, English, or follow the device language</string>
+    <string-array name="ui_language_entries">
+        <item>Español</item>
+        <item>English</item>
+        <item>Follow device language</item>
+    </string-array>
+    <string-array name="ui_language_values" translatable="false">
+        <item>es</item>
+        <item>en</item>
+        <item>system</item>
+    </string-array>
 
     <!-- Units abbreviation for the duration (milliseconds) [CHAR LIMIT=10] -->
     <string name="abbreviation_unit_milliseconds"><xliff:g id="MILLISECONDS">%s</xliff:g>ms</string>

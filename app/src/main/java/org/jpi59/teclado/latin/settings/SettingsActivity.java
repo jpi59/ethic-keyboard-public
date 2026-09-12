@@ -35,11 +35,17 @@ import android.view.inputmethod.InputMethodInfo;
 import android.view.inputmethod.InputMethodManager;
 
 import org.jpi59.teclado.R;
+import org.jpi59.teclado.latin.utils.AppLocale;
 import org.jpi59.teclado.latin.utils.FragmentUtils;
 
 public class SettingsActivity extends PreferenceActivity {
     private static final String DEFAULT_FRAGMENT = SettingsFragment.class.getName();
     private static final String TAG = SettingsActivity.class.getSimpleName();
+
+    @Override
+    protected void attachBaseContext(final Context newBase) {
+        super.attachBaseContext(AppLocale.wrap(newBase));
+    }
 
     @Override
     protected void onStart() {

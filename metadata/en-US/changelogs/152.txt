@@ -1,0 +1,1 @@
+Added an optional display-language choice for the keyboard settings: Spanish, English, or the device language.

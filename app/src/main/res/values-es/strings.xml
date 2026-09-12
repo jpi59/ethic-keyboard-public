@@ -26,6 +26,13 @@
     <string name="settings_screen_key_press">Presionar tecla</string>
     <string name="settings_screen_appearance">Apariencia</string>
     <string name="settings_screen_theme">"Tema"</string>
+    <string name="ui_language">Idioma de visualización</string>
+    <string name="ui_language_summary">Elige español, inglés o sigue el idioma del dispositivo</string>
+    <string-array name="ui_language_entries">
+        <item>Español</item>
+        <item>English</item>
+        <item>Seguir el idioma del dispositivo</item>
+    </string-array>
     <string name="settings_system_default">"Predeterminado"</string>
     <string name="auto_cap">"Mayúsculas automáticas"</string>
     <string name="auto_cap_summary">"Escribir la primera letra de cada frase en mayúscula"</string>
