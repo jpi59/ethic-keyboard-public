@@ -1,0 +1,1 @@
+Updated the canonical source, privacy-policy and licence links after the public repository was renamed. No keyboard behaviour, permissions or data practices changed.

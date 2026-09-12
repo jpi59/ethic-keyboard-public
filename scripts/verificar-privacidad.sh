@@ -30,16 +30,16 @@ if grep -R -n -E 'android\.app\.backup\.BackupManager|new BackupManager' "$repo_
   exit 1
 fi
 
-grep -Fq 'https://github.com/jpi59/ethic-keyboard-public/blob/master/PRIVACY_JPI59.md' "$app_strings" || {
+grep -Fq 'https://github.com/jpi59/ethic-keyboard/blob/master/PRIVACY_JPI59.md' "$app_strings" || {
   printf 'ERROR: la política de privacidad no apunta al repositorio público.\n' >&2
   exit 1
 }
-grep -Fq 'https://github.com/jpi59/ethic-keyboard-public/blob/master/LICENSE' "$app_strings" || {
+grep -Fq 'https://github.com/jpi59/ethic-keyboard/blob/master/LICENSE' "$app_strings" || {
   printf 'ERROR: la licencia no apunta al repositorio público.\n' >&2
   exit 1
 }
-if grep -Fq 'https://github.com/jpi59/ethic-keyboard/blob/master/' "$app_strings"; then
-  printf 'ERROR: quedan enlaces al repositorio no público en la aplicación.\n' >&2
+if grep -Fq 'ethic-keyboard-public' "$app_strings"; then
+  printf 'ERROR: quedan enlaces al nombre de repositorio anterior en la aplicación.\n' >&2
   exit 1
 fi
 
