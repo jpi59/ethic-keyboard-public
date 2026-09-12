@@ -1,12 +1,12 @@
 # Ficha final de distribución — Ethic Keyboard
 
-Estado: **preparación de tiendas; no publicada**.
+Estado: **APK directa de producción publicada; F-Droid pendiente de revisión**.
 
 ## Identidad
 
 - Nombre: Ethic Keyboard
 - Paquete Android: `org.jpi59.teclado`
-- Versión preparada: `6.6.3` (`versionCode 151`)
+- Versión directa publicada: `6.6.4` (`versionCode 152`)
 - Licencia del conjunto: GNU GPLv3 o posterior; se conservan los avisos Apache 2.0 heredados.
 - Política de privacidad integrada: `PRIVACY_JPI59.md`, accesible desde los ajustes de la aplicación.
 
@@ -15,17 +15,26 @@ Estado: **preparación de tiendas; no publicada**.
 - El código no declara permisos de red ni dependencias de anuncios o telemetría.
 - El manifiesto declara únicamente `VIBRATE` como permiso normal.
 - El respaldo automático y las solicitudes de copia de seguridad del sistema están desactivados.
-- La compilación release reproduce `app-release-unsigned.apk`.
+- La compilación release produce el artefacto sin firmar que se conserva solo
+  localmente antes de la firma.
+- La APK directa `6.6.4` fue alineada, firmada y verificada con `apksigner`.
+  Su checksum SHA-256 y la huella SHA-256 del certificado aparecen en el
+  [release público](https://github.com/jpi59/ethic-keyboard-public/releases/tag/v6.6.4).
+- La APK de producción se instaló y verificó en un dispositivo antes de su
+  publicación.
 - Los scripts de privacidad y licencias pasan en este entorno.
 - El árbol actual no contiene las capturas ni el recurso promocional de licencia incierta.
 
-## Bloqueos antes de publicar
+## Estado por canal
 
-1. Completar la procedencia individual de los recursos gráficos indicada en `AUDITORIA-LICENCIAS-ETHIC-KEYBOARD.md` o retirarlos.
-2. Etiquetar el commit de la versión y publicar el código fuente exacto que se distribuirá.
-3. Confirmar que la URL pública de privacidad responde sin autenticación, coincide con el APK/AAB y contiene la identidad pública elegida para la ficha de tienda.
-4. Preparar y validar la receta de compilación de F-Droid contra el commit etiquetado; no afirmar disponibilidad hasta la aceptación de F-Droid.
-5. Para Google Play, generar un Android App Bundle (`.aab`), inscribir la clave de firma existente en Play App Signing y completar la ficha, clasificación de contenido y Data safety con declaraciones verificadas.
+- **GitHub:** publicado el código etiquetado, la APK firmada y su checksum. La
+  nota del release identifica el certificado y el comando de verificación.
+- **F-Droid:** la receta está propuesta y su CI ha sido correcta, pero la
+  incorporación depende de una revisión humana externa. No hay disponibilidad
+  en el catálogo mientras la solicitud siga abierta.
+- **Google Play:** no se ha publicado ni se debe afirmar disponibilidad. Antes
+  de usar ese canal se requiere un AAB, Play App Signing con la clave existente
+  y declaraciones verificadas de ficha, clasificación y Data safety.
 
 ## Compatibilidad entre canales
 

@@ -20,11 +20,15 @@ Feature it doesn't have and probably will never have:
 
 ## Distribución
 
-La versión reproducible está preparada, pero no se declara publicada hasta que exista un
-APK firmado por el titular y una revisión de distribución completada. Consulta la
-[ficha de distribución](DISTRIBUCION.md), la [política de privacidad](docs/privacy.html)
-y [RELEASE.md](RELEASE.md). F-Droid será la primera vía prevista; Google Play queda
-sujeto a sus requisitos y a una revisión independiente.
+La versión `6.6.4` (`versionCode 152`) tiene una [APK de producción firmada y
+su checksum SHA-256](https://github.com/jpi59/ethic-keyboard-public/releases/tag/v6.6.4)
+publicados en GitHub. Consulta la [ficha de distribución](DISTRIBUCION.md), la
+[política de privacidad](docs/privacy.html) y [RELEASE.md](RELEASE.md).
+
+La propuesta para F-Droid está en revisión y no debe presentarse como disponible
+en su catálogo hasta que sus mantenedores la acepten. F-Droid compilará y firmará
+su propio artefacto desde el código fuente; ese paquete tendrá una firma distinta
+de la APK directa.
 
 ## Credits
 
